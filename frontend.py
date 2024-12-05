@@ -69,7 +69,7 @@ class MentalDataFrontend:
             st.markdown("### Cognitive Behavioral Therapy and Dialectical Behavioral Therapy show the best results in terms of treatment progress and symptom severity reduction. Mindfulness-Based Therapy, although it has a long duration, shows less pronounced progress and a decrease in symptoms. Interpersonal Therapy is located between these two groups in terms of effectiveness.")
 
         with st.container():
-            st.markdown("### This graph shows the distribution of therapy outcomes for different Therapy Types. Outcomes are presented on a scale from 1 to 4 and are divided into three categories: deterioration (blue columns), no change (red columns) and improvement (green columns).")
+            st.markdown("### This graph shows the distribution of therapy outcomes for different Therapy Types. Outcomes are presented on a scale from 1 to 4 and are divided into three categories: deterioration, no change and improvement.")
         st.plotly_chart(graph_generator.analysis_outcomes(), use_container_width=True, key=graph_generator.generate_key())
         with st.expander("Show/Close code"):
             st.code(data.source_code.source_code_data_list['sixth_table'], language='python')
