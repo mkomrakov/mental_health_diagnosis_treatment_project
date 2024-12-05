@@ -37,7 +37,7 @@ class GenerateGraph:
         )
 
         # Отображение графика
-        return fig.show()
+        return fig
  
     def generate_women_chart(self):
         # Фильтрация данных по женщинам
@@ -67,7 +67,7 @@ class GenerateGraph:
         )
 
         # Отображение графика
-        return fig.show()
+        return fig
     
     def sympthom_sev_stress_lev(self):
         # Преобразование данных, если требуется
@@ -110,7 +110,7 @@ class GenerateGraph:
         )
 
         # Отображение графика
-        return fig.show()
+        return fig
     
     def sleep_qual_mood_sc(self):
         # Группировка данных по Physical Activity (hrs/week) и вычисление среднего
@@ -149,7 +149,7 @@ class GenerateGraph:
         )
 
         # Отображение графика
-        return fig.show()
+        return fig
     
     def avg_treatment_ther_type(self):
         # Группировка данных по Therapy Type и вычисление среднего
@@ -197,7 +197,7 @@ class GenerateGraph:
         )
 
         # Отображение графика
-        return fig.show()
+        return fig
     
     def analysis_outcomes(self):
         # Calculate the distribution of outcomes for each therapy type
@@ -247,7 +247,7 @@ class GenerateGraph:
         )
 
         # Show the plot
-        return fig.show()
+        return fig
 
     def generate_key(self, prefix="chart"):
         return f"{prefix}_{uuid.uuid4().hex}"

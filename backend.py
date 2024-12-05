@@ -7,7 +7,6 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import dotenv_values
 import numpy as np
-import data.cfg as cfg
 
 
 class FormData(BaseModel):
@@ -53,12 +52,7 @@ class MentalDataBackend:
             return await self.submit_data(data)
 
 
-        @self.app.get('/api/clean_data/')
-        async def clean_data():
-            return await self.clean_data()
-
-
-        @self.app.get('/api/')
+        @self.app.get('/')
         async def main():
             return {'message': "Hello from FastAPI."}
 
@@ -71,11 +65,11 @@ class MentalDataBackend:
 
         df = pd.read_csv(self.PATH)
 
-        last_person_id = df["Person ID"].max()
+        last_person_id = df["Patient ID"].max()
         new_person_id = last_person_id + 1 if not pd.isnull(last_person_id) else 1
         
         new_data = {
-            "Person ID": int(new_person_id),
+            "Patient ID": int(new_person_id),
             "Gender": data.gender,
             "Age": data.age,
             "Diagnosis": data.diagnosis,
@@ -89,7 +83,7 @@ class MentalDataBackend:
             "Treatment Progress (1-10)": data.treatment_progress
         }
         self.logger.info(f"Received data: {new_data}")
-        ordered_columns = ["Person ID", "Gender", "Age", "Diagnosis", "Symptom Severity (1-10)", "Sleep Quality (1-10)", "Physical Activity (hrs/week)", "Therapy Type", "Treatment Duration (weeks)", "Stress Level (1-10)", "Outcome", "Treatment Progress (1-10)"]
+        ordered_columns = ["Patient ID", "Gender", "Age", "Diagnosis", "Symptom Severity (1-10)", "Sleep Quality (1-10)", "Physical Activity (hrs/week)", "Therapy Type", "Treatment Duration (weeks)", "Stress Level (1-10)", "Outcome", "Treatment Progress (1-10)"]
         print(df.columns.tolist())
         print(new_data)
         df = pd.concat([df, pd.DataFrame([new_data], columns=ordered_columns)], ignore_index=True)
