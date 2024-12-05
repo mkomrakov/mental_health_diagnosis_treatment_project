@@ -34,7 +34,7 @@ class MentalDataFrontend:
         with st.expander("Show/Close code"):
             st.code(data.source_code.source_code_data_list['first_table'], language='python')
         with st.container():
-            st.markdown("## Generalized Anxiety is rather a common diagnosis among men. Panic Disorder and Major Depressive Disorder are also significant problems, but they are less common than Generalized Anxiety. Bipolar Disorder has the disease itself from all four categories, but is close in value to Panic Disorder and Major Depressive Disorder.")
+            st.markdown("### Generalized Anxiety is rather a common diagnosis among men. Panic Disorder and Major Depressive Disorder are also significant problems, but they are less common than Generalized Anxiety. Bipolar Disorder has the disease itself from all four categories, but is close in value to Panic Disorder and Major Depressive Disorder.")
 
         with st.container():
             st.markdown("### This pie chart shows the distribution of different diagnoses among women. Diagnoses are presented in four categories: Generalized Anxiety, Panic Disorder, Major Depressive Disorder and Bipolar Disorder.")
