@@ -77,7 +77,7 @@ class MentalDataFrontend:
             st.markdown("### Cognitive Behavioral Therapy and Dialectical Behavioral Therapy show the greatest effectiveness with minimal risk of deterioration. Interpersonal Therapy and Mindfulness-Based Therapy demonstrate an increased risk of deterioration, which requires careful assessment before their use. Mindfulness-Based Therapy shows the lowest rate of improvement among all methods.")
 
         with st.container():
-            st.markdown("### Summarize")
+            st.markdown("## Summarize")
             st.markdown("### The data highlights key trends in mental health:")
             st.markdown("### Diagnoses: Generalized Anxiety is the most common among men and women, but there are gender differences in the prevalence of other diagnoses.")
             st.markdown("### Age: The younger age group is more prone to stress and severity of symptoms, but older people also require attention to their mental state.")
